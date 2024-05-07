@@ -28,7 +28,7 @@ Noureddin M, Truong E, Mayo R, Martínez-Arranz I, Mincholé I, Banales JM, et a
   * **Clone the Repository:**
 
       ```bash
-      git clone https://github.com/imarranz/masef-hepatology-data.git
+      git clone https://github.com/OWLMetabolomics/masef-hepatology-data.git
       ```
 
   * **Change Directory:**
