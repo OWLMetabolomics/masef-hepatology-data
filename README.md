@@ -91,7 +91,7 @@ data.head(10)
       <th>Steatosis Grade (0-3)</th>
       <th>Lobular Inflammation Grade (0-3)</th>
       <th>Ballooning Grade (0-2)</th>
-      <th>OWLiver at-risk MASH Score</th>
+      <th>MASEF Score</th>
       <th>Biopsy</th>
     </tr>
   </thead>
@@ -253,12 +253,12 @@ data.Biopsy.value_counts()
 data_derivation = \
 pd.DataFrame({
     'Biopsy': data.loc[data.Cohort == 'Derivation', 'Biopsy'],
-'MASEF': ['Not at-risk MASH' if x <= 0.330 else 'At-risk MASH' for x in data.loc[data.Cohort == 'Derivation', 'OWLiver at-risk MASH Score']]})
+'MASEF': ['Not at-risk MASH' if x <= 0.330 else 'At-risk MASH' for x in data.loc[data.Cohort == 'Derivation', 'MASEF Score']]})
 
 data_validation = \
 pd.DataFrame({
     'Biopsy': data.loc[data.Cohort == 'Validation', 'Biopsy'],
-'MASEF': ['Not at-risk MASH' if x <= 0.330 else 'At-risk MASH' for x in data.loc[data.Cohort == 'Validation', 'OWLiver at-risk MASH Score']]})
+'MASEF': ['Not at-risk MASH' if x <= 0.330 else 'At-risk MASH' for x in data.loc[data.Cohort == 'Validation', 'MASEF Score']]})
 ```
 
 ```python
@@ -448,7 +448,7 @@ from sklearn.metrics import roc_curve, roc_auc_score
 ```python
 auc_d = \
 roc_auc_score(y_true = [0 if x == 'Not at-risk MASH' else 1 for x in data.loc[data.Cohort == 'Derivation', 'Biopsy']],
-          y_score = data.loc[data.Cohort == 'Derivation', 'OWLiver at-risk MASH Score'])
+          y_score = data.loc[data.Cohort == 'Derivation', 'MASEF Score'])
 
 print(f"AUC: {auc_d:.2f}")
 ```
@@ -460,7 +460,7 @@ print(f"AUC: {auc_d:.2f}")
 ```python
 auc_v = \
 roc_auc_score(y_true = [0 if x == 'Not at-risk MASH' else 1 for x in data.loc[data.Cohort == 'Validation', 'Biopsy']],
-          y_score = data.loc[data.Cohort == 'Validation', 'OWLiver at-risk MASH Score'])
+          y_score = data.loc[data.Cohort == 'Validation', 'MASEF Score'])
 print(f"AUC: {auc_v:.2f}")
 ```
 
@@ -471,10 +471,10 @@ print(f"AUC: {auc_v:.2f}")
 ```python
 fpr_d, tpr_d, thresholds = \
 roc_curve(y_true = [0 if x == 'Not at-risk MASH' else 1 for x in data.loc[data.Cohort == 'Derivation', 'Biopsy']],
-          y_score = data.loc[data.Cohort == 'Derivation', 'OWLiver at-risk MASH Score'])
+          y_score = data.loc[data.Cohort == 'Derivation', 'MASEF Score'])
 fpr_v, tpr_v, thresholds = \
 roc_curve(y_true = [0 if x == 'Not at-risk MASH' else 1 for x in data.loc[data.Cohort == 'Validation', 'Biopsy']],
-          y_score = data.loc[data.Cohort == 'Validation', 'OWLiver at-risk MASH Score'])
+          y_score = data.loc[data.Cohort == 'Validation', 'MASEF Score'])
 
 ```
 
