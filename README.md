@@ -5,6 +5,17 @@
 
 ![](https://www.ncbi.nlm.nih.gov/pmc/articles/instance/10718221/bin/hep-79-135-g001.jpg)
 
+## Overview
+
+This repository contains the **data and Python code** used in the publication:
+
+> **Noureddin M, Truong E, Mayo R, Martínez-Arranz I, Mincholé I, Banales JM, et al. (2024)**
+> *Serum identification of at-risk MASH: The metabolomics-advanced steatohepatitis fibrosis score (MASEF).*
+> *Hepatology, 79*, 135–148.
+> [DOI: 10.1097/HEP.0000000000000542](https://doi.org/10.1097/HEP.0000000000000542)
+
+The **MASEF score** is a metabolomics-driven diagnostic tool developed to identify patients with metabolic dysfunction–associated steatohepatitis (MASH) and significant fibrosis (≥F2). The model uses 12 lipid biomarkers combined with BMI, AST, and ALT to provide a non-invasive alternative to liver biopsy or vibration-controlled transient elastography (VCTE).
+
 ## Abstract
 
 **Background**: Early identification of those with NAFLD activity score ≥ 4 and significant fibrosis ( ≥ F2) or at-risk metabolic dysfunction-associated steatohepatitis (MASH) is a priority as these patients are at increased risk for disease progression and may benefit from therapies. We developed and validated a highly specific metabolomics-driven score to identify at-risk MASH.
